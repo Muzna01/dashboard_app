@@ -119,16 +119,17 @@ export default function DashboardPage() {
     return (
         <div className="flex flex-col gap-4 p-4">
             {/* Tabs Section */}
-            <div className="flex gap-2">
+            <div className="bg-[#EAEAEA] inline-flex w-[400px]">
                 {(["All", "Ongoing", "Upcoming", "Cancelled"] as const).map((tab) => (
                     <Button
                         key={tab}
-                        variant={activeTab === tab ? "default" : "outline"}
-                        className={`rounded px-4 py-2 text-sm ${activeTab === tab
-                            ? "bg-black text-white hover:bg-black/90"
-                            : "bg-white hover:bg-gray-50"
+                        variant="ghost"
+                        className={`px-6 py-2 text-sm rounded-none ${activeTab === tab
+                            ? "border-b-2 border-black font-medium"
+                            : "text-gray-700 hover:bg-gray-100"
                             }`}
-                        onClick={() => setActiveTab(tab)}   >
+                        onClick={() => setActiveTab(tab)}
+                    >
                         {tab}
                     </Button>
                 ))}

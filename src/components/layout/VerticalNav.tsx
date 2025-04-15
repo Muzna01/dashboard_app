@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 
 const navItems = [
     { icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" },
-    { icon: Users, label: "Users", href: "/users" },
+    { icon: Users, label: "Pods", href: "/pods" },
     { icon: FileText, label: "Documents", href: "/documents" },
     { icon: BarChart, label: "Analytics", href: "/analytics" },
     { icon: Bell, label: "Notifications", href: "/notifications" },
@@ -32,10 +32,10 @@ const sidePanelItems = {
         { label: "Customer Chat", href: "/dashboard/chat" },
         { label: "Help Center", href: "/dashboard/help" },
     ],
-    users: [
-        { label: "All Users", href: "/users/all" },
-        { label: "Active Users", href: "/users/active" },
-        { label: "User Roles", href: "/users/roles" },
+    pods: [
+        { label: "Manage Pods", href: "/pods" },
+
+
     ],
     documents: [
         { label: "All Documents", href: "/documents/all" },

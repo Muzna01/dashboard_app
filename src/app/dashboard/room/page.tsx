@@ -44,7 +44,7 @@ export default function RoomPage() {
 
     if (selectedRoom) {
         return (
-            <div className="min-h-screen bg-gray-50">
+            <div className="min-h-screen ">
                 <RoomDescription />
             </div>
         );

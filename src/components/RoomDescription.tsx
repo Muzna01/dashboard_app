@@ -49,16 +49,18 @@ export default function RoomDescription() {
     return (
         <div className="p-6 space-y-4">
             {/* Status Tabs */}
-            <div className="flex gap-2">
+            <div className="bg-[#EAEAEA] inline-flex rounded-none">
                 {(['All', 'Occupied', 'Vacant', 'Room Service'] as const).map((tab) => (
+
                     <Button
                         key={tab}
-                        variant={activeTab === tab ? "default" : "outline"}
-                        className={`rounded px-4 py-2 text-sm ${activeTab === tab
-                            ? "bg-black text-white hover:bg-black/90"
-                            : "bg-white hover:bg-gray-50"
+                        variant="ghost"
+                        className={`px-6 py-2 text-sm rounded-none ${activeTab === tab
+                            ? "border-b-2 border-black font-medium"
+                            : "text-gray-700 hover:bg-gray-100"
                             }`}
                         onClick={() => setActiveTab(tab)}
+
                     >
                         {tab}
                     </Button>
@@ -83,7 +85,7 @@ export default function RoomDescription() {
                 </Button>
             </div>
             {/* Table */}
-            <div className="w-full border border-gray-200">
+            <div className="w-full ">
                 <Table>
                     <TableHeader className="after:content-[''] after:block after:h-3 after:bg-white">
                         <TableRow className="bg-[#DFDFDF] border border-black">
@@ -98,7 +100,7 @@ export default function RoomDescription() {
                         {filteredRooms.map((room) => (
                             <TableRow
                                 key={room.roomNo}
-                                className="bg-[#E5E7EB] hover:bg-[#E5E7EB]/90 cursor-pointer"
+                                className="bg-[#DFDFDF] hover:bg-[#E5E7EB]/90 cursor-pointer"
                                 onClick={() => handleRowClick(room)}
                             >
                                 <TableCell className="py-2.5 px-4 text-sm">{room.roomNo}</TableCell>
@@ -122,7 +124,7 @@ export default function RoomDescription() {
                 </Table>
             </div>
 
-            <RoomSidePanel
+            <   RoomSidePanel
                 isOpen={isDescriptionOpen}
                 onClose={() => setIsDescriptionOpen(false)}
                 room={selectedRoom}
